@@ -35,6 +35,7 @@
 		E6B3F3502AB245DF00C66E68 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6B3F34F2AB245DE00C66E68 /* GoogleService-Info.plist */; };
 		E6B3F3532AB2471400C66E68 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E6B3F3522AB2471400C66E68 /* FirebaseAuth */; };
 		E6B3F3552AB2471400C66E68 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E6B3F3542AB2471400C66E68 /* FirebaseDatabase */; };
+		E6B3F3592AB5F1A000C66E68 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6B3F3582AB5F1A000C66E68 /* SignIn.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		E6B3F34B2AAE45BD00C66E68 /* CRUDResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDResponse.swift; sourceTree = "<group>"; };
 		E6B3F34D2AAE4A6100C66E68 /* NewsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResponse.swift; sourceTree = "<group>"; };
 		E6B3F34F2AB245DE00C66E68 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E6B3F3582AB5F1A000C66E68 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 				E6B3F3292AAD9AB900C66E68 /* SavedNews.storyboard */,
 				E6B3F32B2AAD9AD000C66E68 /* Profile.storyboard */,
 				E6B3F33B2AADAA7200C66E68 /* SignUp.storyboard */,
+				E6B3F3582AB5F1A000C66E68 /* SignIn.storyboard */,
 				E6B3F3412AADBD9B00C66E68 /* Data */,
 			);
 			path = StoryBoards;
@@ -266,6 +269,7 @@
 				E6B3F3502AB245DF00C66E68 /* GoogleService-Info.plist in Resources */,
 				E6B3F3122AAD990300C66E68 /* LaunchScreen.storyboard in Resources */,
 				E6B3F30F2AAD990300C66E68 /* Assets.xcassets in Resources */,
+				E6B3F3592AB5F1A000C66E68 /* SignIn.storyboard in Resources */,
 				E6B3F30D2AAD990100C66E68 /* Main.storyboard in Resources */,
 				E6B3F3282AAD9A9B00C66E68 /* News.storyboard in Resources */,
 				E6B3F33C2AADAA7200C66E68 /* SignUp.storyboard in Resources */,

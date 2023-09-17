@@ -8,6 +8,6 @@
 import Foundation
 
 class SavedNewsViewModel {
-    var newsRepo = Repo()
+    var newsRepo = NewsRepository()
 
 }

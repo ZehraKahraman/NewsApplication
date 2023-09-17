@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import Kingfisher
 
 class NewsPage: UIViewController {
     @IBOutlet weak var categories: UIToolbar!
     @IBOutlet weak var newsSearchBar: UISearchBar!
     @IBOutlet weak var newsCollectionView: UICollectionView!
     
-    var newsList = [NewsPattern]()
+    var newsList = [Article]()
     var viewModel = NewsViewModel()
     
     override func viewDidLoad() {
@@ -53,7 +54,7 @@ extension NewsPage : UISearchBarDelegate {
 extension NewsPage : UICollectionViewDelegate,UICollectionViewDataSource,CellProtocol{
     func saveNews(indexPath: IndexPath) {
         let news = newsList[indexPath.row]
-        print("\(news.name!) named news is saved!")
+//        print("\(news.name!) named news is saved!")
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -66,10 +67,13 @@ extension NewsPage : UICollectionViewDelegate,UICollectionViewDataSource,CellPro
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionViewCell", for: indexPath) as! NewsCollectionViewCell
         
-        cell.nameLabel.text = news.name
-        cell.categoryLabel.text = news.category
+        cell.nameLabel.text = news.title
+        cell.categoryLabel.text = "test"
         cell.urlLabel.text = news.url
-        cell.newsTextField.text = news.description
+        if let imageUrl = news.urlToImage,
+           let image = URL(string: imageUrl) {
+            cell.imageView.kf.setImage(with: image)
+        }
         
         cell.cellProtocol = self
         cell.indexPath = indexPath

@@ -9,8 +9,8 @@ import Foundation
 import RxSwift
 
 class NewsViewModel {
-    var newsRepo = Repo()
-    var newsList = BehaviorSubject<[NewsPattern]>(value: [NewsPattern]())
+    var newsRepo = NewsRepository()
+    var newsList = BehaviorSubject<[Article]>(value: [Article]())
     
     init(){
         newsList = newsRepo.newsList

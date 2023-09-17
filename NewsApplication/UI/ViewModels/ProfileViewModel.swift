@@ -9,6 +9,6 @@ import Foundation
 import RxSwift
 
 class ProfileViewModel {
-    var newsRepo = Repo()
+    var newsRepo = NewsRepository()
     
 }

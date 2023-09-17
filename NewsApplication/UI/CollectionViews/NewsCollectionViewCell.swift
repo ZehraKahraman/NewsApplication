@@ -13,7 +13,7 @@ protocol CellProtocol{
 
 class NewsCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var newsTextField: UITextView!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var urlLabel: UILabel!

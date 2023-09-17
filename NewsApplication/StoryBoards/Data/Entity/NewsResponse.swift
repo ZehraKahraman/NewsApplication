@@ -7,7 +7,10 @@
 
 import Foundation
 
-class NewsResponse : Codable {
-    var news:[NewsPattern]?
-    var status:String?
+// MARK: - NewsResponse
+struct NewsResponse: Codable {
+    let status: String?
+    let totalResults: Int?
+    let articles: [Article]
 }
+

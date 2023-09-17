@@ -13,7 +13,7 @@
         <!--News Page-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController restorationIdentifier="News" storyboardIdentifier="News" id="Y6W-OH-hqX" customClass="NewsPage" customModule="NewsApplication" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="News" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="NewsPage" customModule="NewsApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,27 +57,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="179" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zeG-ZD-7zQ">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KEj-pv-6VS">
                                                     <rect key="frame" x="8" y="8" width="163" height="146"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="146" id="vVV-3j-btU"/>
+                                                        <constraint firstAttribute="height" constant="146" id="q6w-TM-xhA"/>
                                                     </constraints>
-                                                    <color key="textColor" systemColor="labelColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDA-sf-CE9">
-                                                    <rect key="frame" x="45" y="260" width="89" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="PER-LE-pY0"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="star.fill" catalog="system" title="Save"/>
-                                                    <connections>
-                                                        <action selector="saveButton:" destination="zRS-Cn-EC5" eventType="touchUpInside" id="XDp-x8-Mr9"/>
-                                                    </connections>
-                                                </button>
+                                                </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gQU-Dq-82I">
                                                     <rect key="frame" x="8" y="164" width="163" height="81"/>
                                                     <subviews>
@@ -123,24 +108,35 @@
                                                         <constraint firstItem="Hqk-Af-Ojo" firstAttribute="top" secondItem="gQU-Dq-82I" secondAttribute="top" id="mG3-0o-igB"/>
                                                     </constraints>
                                                 </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDA-sf-CE9">
+                                                    <rect key="frame" x="45" y="260" width="89" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="PER-LE-pY0"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="star.fill" catalog="system" title="Save"/>
+                                                    <connections>
+                                                        <action selector="saveButton:" destination="zRS-Cn-EC5" eventType="touchUpInside" id="XDp-x8-Mr9"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="fDA-sf-CE9" secondAttribute="trailing" constant="45" id="7wY-pA-hU2"/>
-                                                <constraint firstAttribute="trailing" secondItem="zeG-ZD-7zQ" secondAttribute="trailing" constant="8" id="MvM-rd-Et2"/>
+                                                <constraint firstAttribute="trailing" secondItem="KEj-pv-6VS" secondAttribute="trailing" constant="8" id="N1B-7r-kYv"/>
+                                                <constraint firstItem="KEj-pv-6VS" firstAttribute="top" secondItem="Oj1-t9-n2E" secondAttribute="top" constant="8" id="W89-8B-6rA"/>
                                                 <constraint firstItem="fDA-sf-CE9" firstAttribute="leading" secondItem="Oj1-t9-n2E" secondAttribute="leading" constant="45" id="WP0-a4-ZKr"/>
                                                 <constraint firstAttribute="bottom" secondItem="gQU-Dq-82I" secondAttribute="bottom" constant="55" id="bsO-AB-m9z"/>
-                                                <constraint firstItem="zeG-ZD-7zQ" firstAttribute="leading" secondItem="Oj1-t9-n2E" secondAttribute="leading" constant="8" id="hyF-9i-LIA"/>
                                                 <constraint firstAttribute="bottom" secondItem="fDA-sf-CE9" secondAttribute="bottom" constant="10" id="ius-Dv-DVZ"/>
                                                 <constraint firstAttribute="trailing" secondItem="gQU-Dq-82I" secondAttribute="trailing" constant="8" id="nnS-aI-E9u"/>
                                                 <constraint firstItem="gQU-Dq-82I" firstAttribute="leading" secondItem="Oj1-t9-n2E" secondAttribute="leading" constant="8" id="odG-fk-FRM"/>
-                                                <constraint firstItem="zeG-ZD-7zQ" firstAttribute="top" secondItem="Oj1-t9-n2E" secondAttribute="top" constant="8" id="udO-hl-I7g"/>
+                                                <constraint firstItem="KEj-pv-6VS" firstAttribute="leading" secondItem="Oj1-t9-n2E" secondAttribute="leading" constant="8" id="qcT-BY-HXf"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <connections>
                                             <outlet property="categoryLabel" destination="25E-VN-R0S" id="sb8-hd-PHu"/>
+                                            <outlet property="imageView" destination="KEj-pv-6VS" id="1vN-ix-Spi"/>
                                             <outlet property="nameLabel" destination="Hqk-Af-Ojo" id="NaT-DB-gGD"/>
-                                            <outlet property="newsTextField" destination="zeG-ZD-7zQ" id="cOU-vA-fFj"/>
                                             <outlet property="urlLabel" destination="PBb-H8-h4m" id="Mwl-nO-oJG"/>
                                         </connections>
                                     </collectionViewCell>
@@ -176,9 +172,6 @@
     <resources>
         <image name="line.3.horizontal" catalog="system" width="128" height="65"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

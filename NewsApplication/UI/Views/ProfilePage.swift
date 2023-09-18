@@ -15,6 +15,8 @@ class ProfilePage: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     
+    private var viewModel = ProfileViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +25,11 @@ class ProfilePage: UIViewController {
         nameLabel.layer.cornerRadius = 10
         emailLabel.layer.cornerRadius = 10
         phoneNumberLabel.layer.cornerRadius = 10
-
-
+        setContent()
+    }
+    
+    func setContent() {
+        guard let user = viewModel.getCurrentUser() else { return }
+        emailLabel.text = user.email
     }
 }

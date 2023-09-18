@@ -21,4 +21,8 @@ class AuthRepository {
             completion(success)
         }
     }
+    
+    func getCurrentUser() -> User? {
+        Auth.auth().currentUser
+    }
 }

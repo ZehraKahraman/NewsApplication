@@ -6,9 +6,13 @@
 //
 
 import Foundation
+import FirebaseAuth
 import RxSwift
 
 class ProfileViewModel {
-    var newsRepo = NewsRepository()
+    var authRepository = AuthRepository()
     
+    func getCurrentUser() -> User? {
+        authRepository.getCurrentUser()
+    }
 }

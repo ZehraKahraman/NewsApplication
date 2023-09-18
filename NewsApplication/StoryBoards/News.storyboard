@@ -134,10 +134,11 @@
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <connections>
-                                            <outlet property="categoryLabel" destination="25E-VN-R0S" id="sb8-hd-PHu"/>
+                                            <outlet property="authorLabel" destination="PBb-H8-h4m" id="nTL-kS-FOx"/>
+                                            <outlet property="descriptionLabel" destination="25E-VN-R0S" id="ySR-WW-3m6"/>
                                             <outlet property="imageView" destination="KEj-pv-6VS" id="1vN-ix-Spi"/>
-                                            <outlet property="nameLabel" destination="Hqk-Af-Ojo" id="NaT-DB-gGD"/>
-                                            <outlet property="urlLabel" destination="PBb-H8-h4m" id="Mwl-nO-oJG"/>
+                                            <outlet property="savedButton" destination="fDA-sf-CE9" id="etk-kZ-VLC"/>
+                                            <outlet property="titleLabel" destination="Hqk-Af-Ojo" id="psH-ri-Mdt"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

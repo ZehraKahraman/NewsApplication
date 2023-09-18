@@ -6,8 +6,22 @@
 //
 
 import Foundation
+import RxSwift
 
 class SavedNewsViewModel {
-    var newsRepo = NewsRepository()
-
+    var newsRepository = NewsRepository()
+    var savedNewsList = BehaviorSubject<[Article]>(value: [Article]())
+    
+    init(){
+        savedNewsList = newsRepository.savedNewsList
+    }
+    
+    func loadSavedNews() {
+        newsRepository.getSavedNews()
+    }
+    
+    func deleteSavedNews(news: Article) {
+        guard let date = news.publishedAt else { return }
+        newsRepository.deleteSavedNews(date: date)
+    }
 }

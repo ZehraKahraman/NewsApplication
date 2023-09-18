@@ -70,16 +70,6 @@
             </objects>
             <point key="canvasLocation" x="769" y="451"/>
         </scene>
-        <!--SignUp-->
-        <scene sceneID="0lq-5J-Ztx">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="SignUp" storyboardName="SignUp" referencedIdentifier="SignUp" id="xAd-iA-JgI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="zL6-pD-Js4"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TEh-Fi-kJG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1494" y="551"/>
-        </scene>
         <!--Saved News-->
         <scene sceneID="jbL-Ek-ka5">
             <objects>
@@ -110,7 +100,6 @@
                         <segue destination="VHJ-DR-m3O" kind="relationship" relationship="viewControllers" id="3Hm-Fz-gvs"/>
                         <segue destination="al7-5y-OFN" kind="relationship" relationship="viewControllers" id="3rc-1Y-rwj"/>
                         <segue destination="Xnr-lz-gPZ" kind="relationship" relationship="viewControllers" id="IYg-O9-1wk"/>
-                        <segue destination="xAd-iA-JgI" kind="relationship" relationship="viewControllers" id="pZr-vY-9C4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vgg-1t-ne3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

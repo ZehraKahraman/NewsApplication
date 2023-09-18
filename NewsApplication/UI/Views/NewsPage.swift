@@ -51,35 +51,38 @@ extension NewsPage : UISearchBarDelegate {
   }
 }
 
-extension NewsPage : UICollectionViewDelegate,UICollectionViewDataSource,CellProtocol{
-    func saveNews(indexPath: IndexPath) {
-        let news = newsList[indexPath.row]
-//        print("\(news.name!) named news is saved!")
-    }
-    
+extension NewsPage: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return newsList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let news = newsList[indexPath.row]
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionViewCell", for: indexPath) as! NewsCollectionViewCell
         
-        cell.nameLabel.text = news.title
-        cell.categoryLabel.text = "test"
-        cell.urlLabel.text = news.url
         if let imageUrl = news.urlToImage,
            let image = URL(string: imageUrl) {
             cell.imageView.kf.setImage(with: image)
         }
-        
+        cell.titleLabel.text = news.title
+        cell.descriptionLabel.text = news.description
+        cell.authorLabel.text = news.author
         cell.cellProtocol = self
         cell.indexPath = indexPath
+        cell.setButtonVisibility(isHidden: !viewModel.checkIsSaved(date: news.publishedAt))
         
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let news = newsList[indexPath.row]
+        viewModel.showNewsDetail(news: news, root: self)
+    }
+}
+
+extension NewsPage: CellProtocol {
+    func saveNews(indexPath: IndexPath) {
+        let news = newsList[indexPath.row]
+//        print("\(news.name!) named news is saved!")
+    }
 }

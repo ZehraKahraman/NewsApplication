@@ -14,9 +14,10 @@ protocol CellProtocol{
 class NewsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var categoryLabel: UILabel!
-    @IBOutlet weak var urlLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var savedButton: UIButton!
     
     var cellProtocol:CellProtocol?
     var indexPath:IndexPath?
@@ -25,4 +26,7 @@ class NewsCollectionViewCell: UICollectionViewCell {
         cellProtocol?.saveNews(indexPath: indexPath!)
     }
     
+    func setButtonVisibility(isHidden: Bool) {
+        savedButton.isHidden = isHidden
+    }
 }

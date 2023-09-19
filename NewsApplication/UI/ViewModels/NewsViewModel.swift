@@ -33,9 +33,7 @@ class NewsViewModel {
     func showNewsDetail(news: Article, root: UIViewController) {
         let storyboard = UIStoryboard(name: "NewsDetail", bundle: nil)
         let newsDetailPage = storyboard.instantiateViewController(withIdentifier: "NewsDetailPage") as! NewsDetailPage
-        root.present(newsDetailPage, animated: true) {
-            newsDetailPage.setContent(news: news)
-        }
-
+        newsDetailPage.setNews(news: news)
+        root.show(newsDetailPage, sender: nil)
     }
 }

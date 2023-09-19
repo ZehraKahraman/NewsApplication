@@ -19,6 +19,8 @@ class SavedNewsPage: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
+        collectionView.delegate = self
+        searchBar.delegate = self
 
         _ = viewModel.savedNewsList.subscribe(onNext: { list in
             self.savedNewsList = list
@@ -43,6 +45,12 @@ class SavedNewsPage: UIViewController {
     
 }
 
+extension SavedNewsPage : UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.searchNews(word: searchText)
+  }
+}
+
 extension SavedNewsPage: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return savedNewsList.count
@@ -61,6 +69,11 @@ extension SavedNewsPage: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.cellProtocol = self
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let news = savedNewsList[indexPath.row]
+        viewModel.showNewsDetail(news: news, root: self)
     }
 }
 

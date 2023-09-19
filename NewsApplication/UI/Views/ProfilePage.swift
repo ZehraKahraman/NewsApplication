@@ -28,6 +28,10 @@ class ProfilePage: UIViewController {
         setContent()
     }
     
+    @IBAction func logoutButtonTapped(_ sender: Any) {
+        viewModel.logout(root: self)
+    }
+    
     func setContent() {
         guard let user = viewModel.getCurrentUser() else { return }
         emailLabel.text = user.email

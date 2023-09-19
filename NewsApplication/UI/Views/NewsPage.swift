@@ -43,8 +43,13 @@ class NewsPage: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         viewModel.loadNews()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        viewModel.loadNews()
+    }
 
 }
+
 extension NewsPage : UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.searchNews(word: searchText)

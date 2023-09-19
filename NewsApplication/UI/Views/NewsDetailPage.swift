@@ -20,10 +20,11 @@ class NewsDetailPage: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setContent()
     }
     
-    func setContent(news: Article) {
-        self.news = news
+    func setContent() {
+        guard let news else { return }
         if let image = news.urlToImage,
            let imageUrl = URL(string: image) {
             imageView.kf.setImage(with: imageUrl)
@@ -36,5 +37,17 @@ class NewsDetailPage: UIViewController {
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let news else { return }
         viewModel.saveNews(news: news)
+//
+//        let alertController = UIAlertController(title: "Remove News from Saved News", message: "Are you sure for removing the news?", preferredStyle: .alert)
+//        let yesAction = UIAlertAction(title: "Yes", style: .destructive){ action in
+//            self.viewModel.delete()
+//        }
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel,handler: nil)
+//        alertController.addAction(cancelAction)
+//        present(alertController,animated: true,completion: nil)
+    }
+    
+    func setNews(news: Article) {
+        self.news = news
     }
 }

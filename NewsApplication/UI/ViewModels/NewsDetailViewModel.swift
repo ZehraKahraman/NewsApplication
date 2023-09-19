@@ -2,7 +2,7 @@
 //  NewsDetailViewModel.swift
 //  NewsApplication
 //
-//  Created by varol on 18.09.2023.
+//  Created by zehra on 18.09.2023.
 //
 
 import Foundation

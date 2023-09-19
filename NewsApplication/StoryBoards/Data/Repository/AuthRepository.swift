@@ -22,7 +22,15 @@ class AuthRepository {
         }
     }
     
-    func getCurrentUser() -> User? {
+    func logout() {
+        do {
+            try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+            print("Çıkış yaparken hata oluştu: \(signOutError.localizedDescription)")
+        }
+    }
+    
+    public func getCurrentUser() -> User? {
         Auth.auth().currentUser
     }
 }

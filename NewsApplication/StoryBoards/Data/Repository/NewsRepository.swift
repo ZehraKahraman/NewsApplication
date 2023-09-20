@@ -18,6 +18,8 @@ class NewsRepository {
     private var tempNewsList = [Article]()
     private var tempSavedNewsList = [Article]()
     
+    private var url = "https://newsapi.org/v2/top-headlines?category=general&apiKey=972badf428cc4fdaab768df313e0d950&pageSize=100&language=en"
+    
     let ref = Database.database().reference()
 
     func loadNews(){
@@ -35,9 +37,6 @@ class NewsRepository {
     
     // API İsteği
     func fetchNews(completion: @escaping (Result<NewsResponse, Error>) -> Void) {
-        let apiKey = "972badf428cc4fdaab768df313e0d950"
-        let url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=\(apiKey)&pageSize=100"
-        
         AF.request(url).responseDecodable(of: NewsResponse.self) { response in
             switch response.result {
             case .success(let newsResponse):
@@ -56,11 +55,26 @@ class NewsRepository {
         
         let filteredList = tempNewsList.filter {
             if let description = $0.description {
-                return description.contains(word)
+                return description.lowercased().contains(word.lowercased())
             }
             return false
         }
         newsList.onNext(filteredList)
+    }
+    
+    func searchSavedNews(word: String) {
+        if word.isEmpty {
+            savedNewsList.onNext(tempSavedNewsList)
+            return
+        }
+        
+        let filteredList = tempSavedNewsList.filter {
+            if let description = $0.description {
+                return description.lowercased().contains(word.lowercased())
+            }
+            return false
+        }
+        savedNewsList.onNext(filteredList)
     }
 }
 
@@ -106,22 +120,46 @@ extension NewsRepository {
     private func saveUserDefaults(date: String) {
         var idArray = UserDefaults.standard.array(forKey: "SavedNewsIDs") as? [String] ?? []
         idArray.append(date)
-        print(idArray)
         UserDefaults.standard.set(idArray, forKey: "SavedNewsIDs")
     }
     
     private func deleteUserDefaults(date: String) {
         var idArray = UserDefaults.standard.array(forKey: "SavedNewsIDs") as? [String] ?? []
         idArray = idArray.filter { $0 != date }
-        print(idArray)
         UserDefaults.standard.set(idArray, forKey: "SavedNewsIDs")
     }
     
     func checkSavedUserDefaults(date: String) -> Bool {
         var idArray = UserDefaults.standard.array(forKey: "SavedNewsIDs") as? [String] ?? []
         let isSaved = idArray.contains(date)
-        print(idArray)
         return isSaved
+    }
+}
+
+extension NewsRepository {
+    func getCategoryNews(word: String) {
+        fetchCategoryNews(word: word) { response in
+            switch response {
+            case .success(let newsResponse):
+                self.tempNewsList = newsResponse.articles
+                self.newsList.onNext(newsResponse.articles)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func fetchCategoryNews(word: String, completion: @escaping (Result<NewsResponse, Error>) -> Void) {
+        url = "https://newsapi.org/v2/top-headlines?category=\(word)&apiKey=972badf428cc4fdaab768df313e0d950&pageSize=100&language=en"
+        
+        AF.request(url).responseDecodable(of: NewsResponse.self.self) { response in
+            switch response.result {
+            case .success(let newsResponse):
+                completion(.success(newsResponse))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
 }
 

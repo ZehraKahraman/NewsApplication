@@ -30,6 +30,11 @@ class NewsViewModel {
         return newsRepo.checkSavedUserDefaults(date: date)
     }
     
+    func getCategoryList(word: String) {
+        newsRepo.getCategoryNews(word: word)
+    }
+    
+    
     func showNewsDetail(news: Article, root: UIViewController) {
         let storyboard = UIStoryboard(name: "NewsDetail", bundle: nil)
         let newsDetailPage = storyboard.instantiateViewController(withIdentifier: "NewsDetailPage") as! NewsDetailPage

@@ -8,13 +8,17 @@
 import UIKit
 import Kingfisher
 
+protocol TabbarProtocol {
+    func tabbarTapped()
+}
+
 class NewsPage: UIViewController {
-    @IBOutlet weak var categories: UIToolbar!
     @IBOutlet weak var newsSearchBar: UISearchBar!
     @IBOutlet weak var newsCollectionView: UICollectionView!
     
     var newsList = [Article]()
     var viewModel = NewsViewModel()
+    var tabbarProtocol: TabbarProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +35,19 @@ class NewsPage: UIViewController {
         })
         
         let design = UICollectionViewFlowLayout()
-        design.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        design.minimumInteritemSpacing = 10
-        design.minimumLineSpacing = 10
+        design.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        //design.minimumInteritemSpacing = 5
+        design.minimumLineSpacing = 5
         let screenWidth = UIScreen.main.bounds.width
-        let itemWidth = (screenWidth-30) / 2
-        design.itemSize = CGSize(width: itemWidth, height: itemWidth*1.6)
+        let itemWidth = (screenWidth-10)
+        design.itemSize = CGSize(width: itemWidth, height: itemWidth*0.3)
         newsCollectionView.collectionViewLayout = design
     }
+    
+    @IBAction func menuBarTapped(_ sender: Any) {
+        tabbarProtocol?.tabbarTapped()
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.loadNews()
@@ -89,5 +98,11 @@ extension NewsPage: CellProtocol {
     func saveNews(indexPath: IndexPath) {
         let news = newsList[indexPath.row]
 //        print("\(news.name!) named news is saved!")
+    }
+}
+
+extension NewsPage: CategoryNewsProtocol {
+    func getCategoryNews(category: String) {
+        viewModel.getCategoryList(word: category)
     }
 }

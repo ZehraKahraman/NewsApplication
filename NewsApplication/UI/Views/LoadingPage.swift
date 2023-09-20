@@ -10,9 +10,11 @@ import UIKit
 class LoadingPage: UIViewController {
     private let viewModel = LoadingViewModel()
 
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.onboarding(viewController: self)
+        indicator.startAnimating()
     }
     
     override func viewDidAppear(_ animated: Bool) {

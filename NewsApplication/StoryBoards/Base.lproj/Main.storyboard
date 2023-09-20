@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="-560" y="451"/>
         </scene>
-        <!--News-->
+        <!--Container-->
         <scene sceneID="v4l-NR-7Zx">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="News" storyboardName="News" referencedIdentifier="News" id="mKS-KK-3Ev" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="Container" storyboardName="Container" referencedIdentifier="Container" id="mKS-KK-3Ev" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Ge2-Ig-sNS"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQ6-6j-HCH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -94,7 +94,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j8G-5J-wY1">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.83529412749999998" green="0.74901962280000001" blue="0.46666666870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="VHJ-DR-m3O" kind="relationship" relationship="viewControllers" id="3Hm-Fz-gvs"/>

@@ -9,14 +9,23 @@ import UIKit
 
 class OnboardingPage: UIViewController {
 
+    
+    @IBOutlet weak var skipButtonOutlet: UIButton!
+    @IBOutlet weak var onboardingImage: UIImageView!
+    
     let viewModel = OnboardingViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        skipButtonOutlet.layer.cornerRadius = 10
+                
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        viewModel.presentOnboarding(root: self)
-
+    @IBAction func skipButton(_ sender: Any) {
+        viewModel.presentSignIn(root: self)
+        
     }
+    
+
 }

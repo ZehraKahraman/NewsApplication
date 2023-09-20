@@ -62,20 +62,24 @@
                                 <color key="textColor" red="0.61001296689999995" green="0.61647796629999996" blue="0.5780046875" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgW-Vl-Ly2">
-                                <rect key="frame" x="160.33333333333334" y="695" width="72.333333333333343" height="40"/>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgW-Vl-Ly2">
+                                <rect key="frame" x="143.66666666666666" y="695" width="106" height="40"/>
+                                <color key="backgroundColor" red="0.94901967050000002" green="0.63921570780000003" blue="0.35294118520000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="MFL-uT-GhO"/>
                                 </constraints>
+                                <color key="tintColor" red="0.11372549830000001" green="0.11372549830000001" blue="0.1058823466" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="logout"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Logout">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="logoutButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="e5y-pW-QgA"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" red="1" green="0.94745775987006631" blue="0.57765874117699478" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Whj-9z-yui" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="56" id="0Yu-6G-ph4"/>
                             <constraint firstItem="0cS-gQ-5vC" firstAttribute="top" secondItem="Whj-9z-yui" secondAttribute="bottom" constant="40" id="3Ac-be-gvh"/>
@@ -113,9 +117,6 @@
         <image name="profile" width="3000" height="3000"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

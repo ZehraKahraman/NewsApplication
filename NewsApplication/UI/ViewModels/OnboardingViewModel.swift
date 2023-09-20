@@ -8,7 +8,7 @@
 import UIKit
 
 class OnboardingViewModel {
-    func presentOnboarding(root: UIViewController) {
+    func presentSignIn(root: UIViewController) {
         let storyboard = UIStoryboard(name: "SignIn", bundle: nil)
         let mainPage = storyboard.instantiateViewController(withIdentifier: "SignInPage") as! SignInPage
         mainPage.modalPresentationStyle = .fullScreen

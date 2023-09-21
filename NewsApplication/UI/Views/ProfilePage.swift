@@ -14,17 +14,19 @@ class ProfilePage: UIViewController {
     @IBOutlet weak var surnameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var logoutButton: UIButton!
     
     private var viewModel = ProfileViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameLabel.layer.cornerRadius = 10
-        surnameLabel.layer.cornerRadius = 10
-        nameLabel.layer.cornerRadius = 10
-        emailLabel.layer.cornerRadius = 10
-        phoneNumberLabel.layer.cornerRadius = 10
+        nameLabel.layer.cornerRadius = 5
+        surnameLabel.layer.cornerRadius = 5
+        nameLabel.layer.cornerRadius = 5
+        emailLabel.layer.cornerRadius = 5
+        phoneNumberLabel.layer.cornerRadius = 5
+        logoutButton.layer.cornerRadius = 10
         setContent()
     }
     

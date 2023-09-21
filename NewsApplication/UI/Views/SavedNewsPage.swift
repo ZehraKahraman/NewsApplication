@@ -41,6 +41,7 @@ class SavedNewsPage: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.loadSavedNews()
+        searchBar.text = ""
     }
     
 }

@@ -70,11 +70,11 @@
             </objects>
             <point key="canvasLocation" x="769" y="451"/>
         </scene>
-        <!--Saved News-->
+        <!--Favorite News-->
         <scene sceneID="jbL-Ek-ka5">
             <objects>
                 <navigationController id="al7-5y-OFN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Saved News" image="square.and.arrow.down" catalog="system" selectedImage="square.and.arrow.down" id="jLw-VR-1gm"/>
+                    <tabBarItem key="tabBarItem" title="Favorite News" image="star.leadinghalf.filled" catalog="system" selectedImage="star.leadinghalf.fill" id="jLw-VR-1gm"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HI6-5Z-6sd">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -94,7 +94,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j8G-5J-wY1">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.83529412749999998" green="0.74901962280000001" blue="0.46666666870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.94509804249999996" green="0.92549020049999997" blue="0.89803922179999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
@@ -111,6 +111,7 @@
     <resources>
         <image name="newspaper" catalog="system" width="128" height="111"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
+        <image name="star.leadinghalf.fill" catalog="system" width="128" height="116"/>
+        <image name="star.leadinghalf.filled" catalog="system" width="128" height="116"/>
     </resources>
 </document>

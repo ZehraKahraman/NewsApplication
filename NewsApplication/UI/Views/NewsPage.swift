@@ -51,6 +51,7 @@ class NewsPage: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.loadNews()
+        newsSearchBar.text = ""
     }
     
     override func viewDidAppear(_ animated: Bool) {

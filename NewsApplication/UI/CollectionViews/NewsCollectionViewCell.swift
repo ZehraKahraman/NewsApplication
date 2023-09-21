@@ -21,6 +21,14 @@ class NewsCollectionViewCell: UICollectionViewCell {
     
     var cellProtocol:CellProtocol?
     var indexPath:IndexPath?
+        
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        imageView.layer.cornerRadius = 10
+        imageView.clipsToBounds = true
+        self.layer.cornerRadius = 10
+    }
     
     @IBAction func saveButton(_ sender: Any) {
         cellProtocol?.saveNews(indexPath: indexPath!)

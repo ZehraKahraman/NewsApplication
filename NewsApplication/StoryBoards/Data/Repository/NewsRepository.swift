@@ -17,13 +17,14 @@ class NewsRepository {
     
     private var tempNewsList = [Article]()
     private var tempSavedNewsList = [Article]()
+    private var network = Network()
     
-    private var url = "https://newsapi.org/v2/top-headlines?category=general&apiKey=972badf428cc4fdaab768df313e0d950&pageSize=100&language=en"
+    private var url = "https://newsapi.org/v2/top-headlines?category=general&apiKey=c8597e01e250430da1464e7388cab7e2&pageSize=100&language=en"
     
     let ref = Database.database().reference()
 
     func loadNews(){
-        fetchNews { response in
+        network.fetchCategoryNews(url: url) { response in
             switch response {
             case .success(let newsResponse):
                 self.tempNewsList = newsResponse.articles
@@ -31,18 +32,6 @@ class NewsRepository {
                 print(newsResponse)
             case .failure(let error):
                 print(error)
-            }
-        }
-    }
-    
-    // API İsteği
-    func fetchNews(completion: @escaping (Result<NewsResponse, Error>) -> Void) {
-        AF.request(url).responseDecodable(of: NewsResponse.self) { response in
-            switch response.result {
-            case .success(let newsResponse):
-                completion(.success(newsResponse))
-            case .failure(let error):
-                completion(.failure(error))
             }
         }
     }
@@ -138,26 +127,14 @@ extension NewsRepository {
 
 extension NewsRepository {
     func getCategoryNews(word: String) {
-        fetchCategoryNews(word: word) { response in
+        url = "https://newsapi.org/v2/top-headlines?category=\(word)&apiKey=c8597e01e250430da1464e7388cab7e2&pageSize=100&language=en"
+        network.fetchCategoryNews(url: url) { response in
             switch response {
             case .success(let newsResponse):
                 self.tempNewsList = newsResponse.articles
                 self.newsList.onNext(newsResponse.articles)
             case .failure(let error):
                 print(error)
-            }
-        }
-    }
-    
-    func fetchCategoryNews(word: String, completion: @escaping (Result<NewsResponse, Error>) -> Void) {
-        url = "https://newsapi.org/v2/top-headlines?category=\(word)&apiKey=972badf428cc4fdaab768df313e0d950&pageSize=100&language=en"
-        
-        AF.request(url).responseDecodable(of: NewsResponse.self.self) { response in
-            switch response.result {
-            case .success(let newsResponse):
-                completion(.success(newsResponse))
-            case .failure(let error):
-                completion(.failure(error))
             }
         }
     }

@@ -35,6 +35,7 @@ class SavedNewsViewModel {
         let storyboard = UIStoryboard(name: "NewsDetail", bundle: nil)
         let newsDetailPage = storyboard.instantiateViewController(withIdentifier: "NewsDetailPage") as! NewsDetailPage
         newsDetailPage.setNews(news: news)
+        newsDetailPage.isSaved = true
         root.show(newsDetailPage, sender: nil)
     }
 }

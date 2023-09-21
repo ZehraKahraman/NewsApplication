@@ -12,6 +12,7 @@ class SignInPage: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var signinImage: UIImageView!
     private let viewModel = SignInViewModel()
     
     override func viewDidLoad() {

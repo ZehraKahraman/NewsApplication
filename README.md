@@ -1,2 +1,2 @@
 # NewsApplication
-<img width="475" alt="Ekran Resmi 2023-09-21 21 23 39" src="https://github.com/ZehraKahraman/NewsApplication/assets/129938191/65d860ff-9d34-4727-9d9d-1e5c04b7d172">
+<img width="475" alt="NewsApp" src="https://github.com/ZehraKahraman/NewsApplication/assets/129938191/4c700cd9-9b61-4d23-8211-a36d7003c7f3">
